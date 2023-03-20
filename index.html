@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset=utf-8 />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description"
+		content="Visor del Observatorio Territorial Godoy Cruz, el cual permite la visualización de información geográfica del municipio. Oficina de Planificación Urbana">
+	<meta name="keywords"
+		content="Godoy Cruz, Planificación Urbana, Secretaria de Ambiente y Desarrollo Sustentable, Visor, Observatorio Territorial">
+	<meta name="author" content="IgnacioDiaz - FernandoCruceño">
+	<meta name="copyright" content="Observatorio Territorial Godoy Cruz - Campaña Vacunación Escolar 2023">
+	<title>ObservatorioTerritorialGC</title>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-33KRTS12JB"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'G-33KRTS12JB');
+	</script>
+
+	<link rel="shortcut icon" type="image/x-icon" href="./img/favicon1.png">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css">
+	<link rel="stylesheet" href="css/Leaflet.PolylineMeasure.css">
+	<link rel="stylesheet" href="css/Leaflet.StreetViewButtons.css">
+	<link rel="stylesheet" href="css/Leaflet.StreetView1Buttons.css">
+	<link rel="stylesheet" href="css/leaflet.groupedlayercontrol.min.css">
+	<link rel="stylesheet" href="css/Control.Coordinates.css">
+	<link rel="stylesheet" href="css/L.Control.MousePosition.css">
+
+	<!-- SCRIPTS -->
+	<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>  
+	<script src="https://unpkg.com/togeojson@0.16.0"></script>
+	<script src="scripts/Leaflet.PolylineMeasure.js"></script>
+	<script src="scripts/StreetViewButtons.js"></script>
+	<script src="scripts/StreetView1Buttons.js"></script>
+	<script src="scripts/leaflet.pattern.js"></script>
+	<script src="scripts/leaflet-tilelayer-wmts.js"></script>
+	<script src="scripts/leaflet.groupedlayercontrol.min.js"></script>
+	<script src="scripts/leaflet.browser.print.js"></script>
+	<script src="scripts/leaflet.filelayer.js"></script>
+	<script src="scripts/Control.Coordinates.js"></script>
+	<script src="scripts/L.Control.MousePosition.js"></script>
+	<script src="js/popups.js"></script>
+	<script src="js/iconos.js"></script>
+
+	<!-- GEOJSON -->
+	
+	<script type="text/javascript" src="scripts/Barrios.js"></script>
+	<script type="text/javascript" src="scripts/SitiosyConjuntosEdilicios.js"></script>
+	<script type="text/javascript" src="scripts/TramosyCarriles.js"></script>
+	<script type="text/javascript" src="scripts/Esculturas.js"></script>
+	<script type="text/javascript" src="scripts/Centrosdesalud.js"></script>
+	<script type="text/javascript" src="scripts/godoycruz.js"></script>
+	<script type="text/javascript" src="scripts/CicloviasExistentes.js"></script>
+	<script type="text/javascript" src="scripts/ClinicasPrivadas.js"></script>
+	<script type="text/javascript" src="scripts/Hospital.js"></script>
+	<script type="text/javascript" src="scripts/Escuelas.js"></script>
+	<script type="text/javascript" src="scripts/Farmacias.js"></script>
+	<script type="text/javascript" src="scripts/ResidenciasAdultosMayores.js"></script>
+	<script type="text/javascript" src="scripts/JardinesMunicipales.js"></script>
+
+	<script type="text/javascript" src="scripts/Seguridad.js"></script>
+	<script type="text/javascript" src="scripts/Reservorios.js"></script>
+	<script type="text/javascript" src="scripts/BarriosPopulares.js"></script>
+	<script type="text/javascript" src="scripts/Zonificacion.js"></script>
+	<script type="text/javascript" src="scripts/BarriosConsolidados.js"></script>
+	<script type="text/javascript" src="scripts/RedesdeAguas.js"></script>
+	<script type="text/javascript" src="scripts/SistemaCloacal.js"></script>
+	<script type="text/javascript" src="scripts/LineasD.js"></script>
+	<script type="text/javascript" src="scripts/LineaMunicipal.js"></script>
+	<script type="text/javascript" src="scripts/Cuencashidrograficas.js"></script>
+	<script type="text/javascript" src="scripts/LineasT.js"></script>
+	<script type="text/javascript" src="scripts/CanalesColectoresHijuelas.js"></script>
+	<script type="text/javascript" src="scripts/PuntosRecepcionPilas.js"></script>
+	<script type="text/javascript" src="scripts/PuntosVerdes.js"></script>
+	<script type="text/javascript" src="scripts/EspaciosVerdes.js"></script>
+	<script type="text/javascript" src="scripts/DependenciasMunicipales.js"></script>
+	<script type="text/javascript" src="scripts/Solmaforos.js"></script>
+	<script type="text/javascript" src="scripts/EstacionesdeServicio.js"></script>
+	<script type="text/javascript" src="scripts/Estaciones.js"></script>
+	<script type="text/javascript" src="scripts/Ripieras.js"></script>
+	<script type="text/javascript" src="scripts/ZonaNatural.js"></script>
+	<script type="text/javascript" src="scripts/ZonaUrbana.js"></script>
+	<script type="text/javascript" src="scripts/LimiteUrbano.js"></script>
+	<script type="text/javascript" src="scripts/DistritosDepartamentales.js"></script>
+	<script type="text/javascript" src="scripts/PlantaRecicladora.js"></script>
+	<script type="text/javascript" src="scripts/Bancos.js"></script>
+	<script type="text/javascript" src="scripts/Cajeros.js"></script>
+	<script type="text/javascript" src="scripts/Pagofacil.js"></script>
+	<script type="text/javascript" src="scripts/Bodegas.js"></script>
+	<script type="text/javascript" src="scripts/Informador.js"></script>
+	<script type="text/javascript" src="scripts/PuestosBici.js"></script>
+	<script type="text/javascript" src="scripts/Fallas.js"></script>
+	<script type="text/javascript" src="scripts/Inundacion.js"></script>
+	<script type="text/javascript" src="scripts/Suelo.js"></script>
+	<script type="text/javascript" src="scripts/RedHidrica.js"></script>
+	<script type="text/javascript" src="scripts/PanelesSolares.js"></script>
+	<script type="text/javascript" src="scripts/InfoAmbiente.js"></script>
+	<script type="text/javascript" src="scripts/Ciclovias Proyectadas (DAMI II).js"></script>
+	<script type="text/javascript" src="scripts/Ciclovias Proyectadas (Municipalidad).js"></script>
+	<script type="text/javascript" src="scripts/Metrotranvia.js"></script>
+	<script type="text/javascript" src="scripts/ParadasMetrotranvia.js"></script>
+	<script type="text/javascript" src="scripts/GranjaSolar.js"></script>
+	<script type="text/javascript" src="scripts/SenderoGeologico.js"></script>
+	<script type="text/javascript" src="scripts/ParadasSendero.js"></script>
+	<script type="text/javascript" src="scripts/cafe.js"></script>
+	<script type="text/javascript" src="scripts/Aventura.js"></script>
+	<script type="text/javascript" src="scripts/Hospedajes.js"></script>
+	<script type="text/javascript" src="scripts/Spa.js"></script>
+	<script type="text/javascript" src="scripts/Heladerias.js"></script>
+	<script type="text/javascript" src="scripts/Bares.js"></script>
+	<script type="text/javascript" src="scripts/Restaurantes.js"></script>
+	<script type="text/javascript" src="scripts/Incubadora.js"></script>
+	<script type="text/javascript" src="scripts/UnionesVecinales.js"></script>
+	<script type="text/javascript" src="scripts/VasoInundacionMaure.js"></script>
+	<script type="text/javascript" src="scripts/SubcuencasMaure.js"></script>
+	<script type="text/javascript" src="scripts/Ciclovias en Ejecucion (DAMI II).js"></script>
+	<script type="text/javascript" src="scripts/Ciclovias en Ejecucion (Municipalidad).js"></script>
+	<script type="text/javascript" src="scripts/Ciclovias Habilitadas (DAMI II).js"></script>
+	<script type="text/javascript" src="scripts/Puestos.js"></script>
+	<script type="text/javascript" src="scripts/CieneguitaTrancas.js"></script>
+	<script type="text/javascript" src="scripts/TrancasIgnacio.js"></script>
+	<script type="text/javascript" src="scripts/Diques.js"></script>
+	<script type="text/javascript" src="scripts/Canales.js"></script>
+	<script type="text/javascript" src="scripts/APIyS.js"></script>
+	<script type="text/javascript" src="scripts/Traza.js"></script>
+	<script type="text/javascript" src="scripts/Polideportivos.js"></script>
+	
+	<script type="text/javascript" src="scripts/Glaciares.js"></script>
+	<script type="text/javascript" src="scripts/Foecyt.js"></script>
+	<script type="text/javascript" src="scripts/Sin.js"></script>
+	<script type="text/javascript" src="scripts/Arturo.js"></script>
+	<script type="text/javascript" src="scripts/Aldo.js"></script>
+	<script type="text/javascript" src="scripts/Navarro.js"></script>
+	<script type="text/javascript" src="scripts/Ramon.js"></script>
+	<script type="text/javascript" src="scripts/Chediak.js"></script>
+	<script type="text/javascript" src="scripts/Fran.js"></script>
+	<script type="text/javascript" src="scripts/Padre.js"></script>
+	<script type="text/javascript" src="scripts/Sarmiento.js"></script>
+	<script type="text/javascript" src="scripts/Estanzuela.js"></script>
+
+	<script type="text/javascript" src="scripts/CentroAldo.js"></script>
+	<script type="text/javascript" src="scripts/CentroAlicia.js"></script>
+	<script type="text/javascript" src="scripts/CentroChediak.js"></script>
+	<script type="text/javascript" src="scripts/CentroDaniel.js"></script>
+	<script type="text/javascript" src="scripts/CentroEstanzuela.js"></script>
+	<script type="text/javascript" src="scripts/CentroFoecyt.js"></script>
+	<script type="text/javascript" src="scripts/CentroFran.js"></script>
+	<script type="text/javascript" src="scripts/CentroFuchs.js"></script>
+	<script type="text/javascript" src="scripts/CentroGlaciares.js"></script>
+	<script type="text/javascript" src="scripts/CentroHuarpes.js"></script>
+	<script type="text/javascript" src="scripts/CentroIllia.js"></script>
+	<script type="text/javascript" src="scripts/CentroNavarro.js"></script>
+	<script type="text/javascript" src="scripts/CentroSarmiento.js"></script>
+	<script type="text/javascript" src="scripts/CentroRamon.js"></script>
+	<script type="text/javascript" src="scripts/CentroPadre.js"></script>
+	<script type="text/javascript" src="scripts/CentroSol.js"></script>
+
+</head>
+
+<header>
+	<style>
+		.leaflet-container {
+			display: flex;
+			font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+			font-size: 12px;
+		}
+
+		.leaflet-control-attribution.leaflet-control {
+			font-family: 'Playfair Display', serif;
+			font-size: 15px;
+		}
+
+		.leaflet-control-attribution.leaflet-control a:hover {
+			color: #800080;
+		}
+	</style>
+
+	<h1>Observatorio Territorial de Godoy Cruz - Campaña Vacunación Escolar 2023</h1>
+	<img src="img/favicon.png" height="auto" width="45px" class="logogc">
+	<div id="map"></div>
+	
+</header>
+
+<body>
+
+	<!-- FUNCIONES LEAFLET -->
+	<script>
+		/* ARGENMAP */
+		var mapabase_argenmap = new L.TileLayer.WMTS('https://wms.ign.gob.ar/geoserver/capabaseargenmap/gwc/service/wmts?', {
+			layer: 'capabaseargenmap',
+			style: "normal",
+			tilematrixSet: "EPSG:3857",
+			format: "image/png",
+			attribution: " <a href='https://www.ign.gob.ar/AreaServicios/Argenmap/IntroduccionV2'> IGN - Argenmap v2 </a> | <a href='https://www.godoycruz.gob.ar/'>Secretaria de Ambiente y Desarrollo Sustentable - Godoy Cruz</a> | <a href='https://github.com/mylen/leaflet.TileLayer.WMTS'>GitHub</a>&copy "
+		});
+
+		/* BASE LAYERS */
+		var esriUrl = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+			esriAttrib = "Powered by <a href='https://www.esri.com/en-us/home'> &copyESRI </a> | <a href='https://www.godoycruz.gob.ar/'>Secretaría de Ambiente y Desarrollo Sustentable - Godoy Cruz</a>",
+			mapabase_esri = L.tileLayer(esriUrl, {
+				maxZoom: 20,
+				attribution: esriAttrib
+			});
+
+		var osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+			osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+			mapabase_osm = L.tileLayer(osmUrl, {
+				maxZoom: 20,
+				attribution: osmAttrib
+			});
+
+		var otUrl = 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+			otAttrib =
+			'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
+			mapabase_ot = L.tileLayer(otUrl, {
+				maxZoom: 20,
+				attribution: otAttrib
+			});
+
+		var googleSatelite = 'http://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}',
+		    googleSateliteAttrib =
+			"Powered by &copyGoogle" ,
+			mapabase_googleSatelite = L.tileLayer(googleSatelite, {
+				maxZoom: 20,
+				attribution: googleSateliteAttrib
+			});
+
+
+		/* OVERLAYS Y GRUPOS */
+		var plazagc = L.marker([-32.92524, -68.84439]).bindPopup('Plaza GC.').openPopup(),
+		godoycruz = L.geoJson(godoycruz),
+
+			//Centros de Salud//
+
+			centroAldo = L.geoJson(CentroAldo, {
+				pointToLayer: crearIconoAsistencia,
+				onEachFeature: agregarPopupSalud
+			}),
+
+			centroChediak = L.geoJson(CentroChediak, {
+				pointToLayer: crearIconoAsistencia,
+				onEachFeature: agregarPopupSalud
+			}),
+
+			 centroEstanzuela = L.geoJson(CentroEstanzuela, {
+				pointToLayer: crearIconoAsistencia,
+				onEachFeature: agregarPopupSalud
+			}),
+
+			centroFran = L.geoJson(CentroFran, {
+				pointToLayer: crearIconoAsistencia,
+				onEachFeature: agregarPopupSalud
+			}),
+			
+			centroNavarro = L.geoJson(CentroNavarro, {
+				pointToLayer: crearIconoAsistencia,
+				onEachFeature: agregarPopupSalud                                          			
+			}),
+
+			centroPadre = L.geoJson(CentroPadre, {
+				pointToLayer: crearIconoAsistencia,
+				onEachFeature: agregarPopupSalud
+			}),
+
+			centroIllia = L.geoJson(CentroIllia, {
+				pointToLayer: crearIconoAsistencia,
+				onEachFeature: agregarPopupSalud
+			}),
+
+			centroGlaciares = L.geoJson(CentroGlaciares, {
+				pointToLayer: crearIconoAsistencia,
+				onEachFeature: agregarPopupSalud
+			}),
+
+			centroSarmiento = L.geoJson(CentroSarmiento, {
+				pointToLayer: crearIconoAsistencia,
+				onEachFeature: agregarPopupSalud
+			}),
+
+			centroRamon = L.geoJson(CentroRamon, {
+				pointToLayer: crearIconoAsistencia,
+				onEachFeature: agregarPopupSalud
+			}),
+
+			centroSol = L.geoJson(CentroSol, {
+				pointToLayer: crearIconoAsistencia,
+				onEachFeature: agregarPopupSalud
+			}),
+
+			centroHuarpes = L.geoJson(CentroHuarpes, {
+				pointToLayer: crearIconoAsistencia,
+				onEachFeature: agregarPopupSalud
+			}),
+
+			centroDaniel = L.geoJson(CentroDaniel, {
+				pointToLayer: crearIconoAsistencia,
+				onEachFeature: agregarPopupSalud
+			}),
+
+			centroFuchs = L.geoJson(CentroFuchs, {
+				pointToLayer: crearIconoAsistencia,
+				onEachFeature: agregarPopupSalud
+			}),
+
+			centroFoecyt = L.geoJson(CentroFoecyt, {
+				pointToLayer: crearIconoAsistencia,
+				onEachFeature: agregarPopupSalud
+			}),
+
+			//Escuelas//
+
+			glaciares = L.geoJson(Glaciares, {
+				pointToLayer: crearIconoRojo,
+				onEachFeature: agregarPopupescuelas
+			}),
+
+			ramon = L.geoJson(Ramon, {
+				pointToLayer: crearIconoAzul,
+				onEachFeature: agregarPopupescuelas
+			}),
+
+			sin = L.geoJson(Sin, {
+				pointToLayer: crearIconoVerde,
+				onEachFeature: agregarPopupescuelas
+			}),
+
+			aldo = L.geoJson(Aldo, {
+				pointToLayer: crearIconoNegro,
+				onEachFeature: agregarPopupescuelas
+			}),
+
+			chediak = L.geoJson(Chediak, {
+				pointToLayer: crearIconoVioleta,
+				onEachFeature: agregarPopupescuelas
+			}),
+i
+			estanzuela = L.geoJson(Estanzuela, {
+				pointToLayer: crearIconoAmarillo,
+				onEachFeature: agregarPopupescuelas
+			}),
+
+			sarmiento = L.geoJson(Sarmiento, {
+				pointToLayer: crearIconoNaranja,
+				onEachFeature: agregarPopupescuelas
+			}),
+
+			foecyt = L.geoJson(Foecyt, {
+				pointToLayer: crearIconoGris,
+				onEachFeature: agregarPopupescuelas
+			}),
+			
+			navarro = L.geoJson(Navarro, {
+				pointToLayer: crearIconoDorado,
+				onEachFeature: agregarPopupescuelas
+			}),
+
+			arturo = L.geoJson(Arturo, {
+				pointToLayer: crearIconoAzul,
+				onEachFeature: agregarPopupescuelas
+			}),
+
+			fran = L.geoJson(Fran, {
+				pointToLayer: crearIconoNaranja,
+				onEachFeature: agregarPopupescuelas
+			}),
+
+			padre = L.geoJson(Padre, {
+				pointToLayer: crearIconoRojo,
+				onEachFeature: agregarPopupescuelas
+			}),
+
+			//Otras Capas//
+
+			BarriosConsolidados = L.geoJson(BarriosConsolidados, {
+				onEachFeature: agregarPopupBarriosConsolidados
+			}),
+			Depa = L.geoJson(DistritosDepartamentales, {
+				onEachFeature: agregarPopupDistritosDepartamentales
+			}),
+			polideportivos = L.geoJson(Polideportivos, {
+				pointToLayer: crearIconoPoli,
+				onEachFeature: agregarPopupSalud
+			});
+
+
+
+		/* CREACIÓN DEL MAPA CON BASE LAYERS Y OVERLAYS */
+		var map = L.map('map', { dragging: !L.Browser.mobile, tap: !L.Browser.mobile,
+			layers: [mapabase_argenmap, godoycruz]
+		}).setView([-32.9337, -68.8978], 13);
+		var marker = L.marker(map.getCenter(), {
+				icon: iconoSTV
+			}).bindPopup(
+				'Mover éste marcador y clickear el boton "Enlace externo de Street View", ubicado a la izquierda del mapa')
+			.addTo(map);
+		map.on('move', function () {
+			marker.setLatLng(map.getCenter());
+		});
+
+		/* FUNCIONES DE ESTILO DE OVERLAYS */
+		estiloDistritosDepartamentales();
+
+
+		/* CREACIÓN DEL LAYERS CONTROL */
+		var baseMaps = {
+			"Argenmap": mapabase_argenmap,
+			"ESRI Satelital": mapabase_esri,
+		};
+
+		var groupedOverlays = {
+			"Street View": {
+				"Marcador": marker,
+			},
+
+			"Capas de Utilidad": {
+				"Distritos": Depa,
+				"Barrios Consolidados": BarriosConsolidados,
+				"Polideportivos": polideportivos,
+			},
+
+			"Centros de Salud":{
+				"Nº 4 Los Glaciares": centroGlaciares,
+				"Nº 8 B. Los Huerpes II": centroHuarpes,
+				"Nº 27 San Fco. del Monte": centroFran,
+				"Nº 28 Dr. Juan Maurin Navarro": centroNavarro,
+				"Nº 29 Roberto Chediak": centroChediak,
+				"Nº 30 Dr. Aldo Dapás": centroAldo,
+				"Nº 134 Padre Contreras": centroPadre,
+				"Nº 149 Ramon Carrillo": centroRamon,
+				"Nº 150 Daniel Rebollo": centroDaniel,
+				"Nº 168 La Estanzuela": centroEstanzuela,
+				"Nº 204 B. Sarmiento": centroSarmiento,
+				"Nº 304 B. Fuchs": centroFuchs,
+				"Nº 305 B. Foecyt": centroFoecyt,
+				"Nº 515 B. Sol y Sierra": centroSol,
+				"Nº 908 Pte. Arturo Illia": centroIllia,
+			},
+
+			"Campaña de Vacunación - Escuelas": {
+				"Nº 4 Los Glaciares": glaciares,
+				"Nº 27 San Fco. del Monte": fran,
+				"Nº 28 Dr. Juan Maurin Navarro": navarro,
+				"Nº 29 Roberto Chediak": chediak,
+				"Nº 30 Dr. Aldo Dapás": aldo,
+				"Nº 134 Padre Contreras": padre,
+				"Nº 149 Ramon Carrillo": ramon,
+				"Nº 168 La Estanzuela": estanzuela,
+				"Nº 204 B. Sarmiento": sarmiento,
+				"Nº 908 Pte. Arturo Illia": arturo,
+			
+			},
+
+		};
+		var opciones_groupedlayers = {
+			groupCheckboxes: false
+		};
+
+		L.control.mousePosition().addTo(map);
+	</script>
+
+	<script src="js/funcionesMapa.js"></script>
+</body>
+
+</html>
