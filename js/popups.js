@@ -1,5 +1,23 @@
 /* POPUPS */
 
+//POPUP SALUD//
+
+function agregarPopupSalud(feature, layer) {
+    if (feature.properties && feature.properties.Nombre_1) {
+        layer.bindPopup("<strong>" + feature.properties.Nombre_1 + "</strong><br/>" + feature.properties.Direccion + "</strong><br/>" + "Agente Sanitario: <strong>" + feature.properties.encargado + "</strong><br/>" + "Horario: <strong>" + feature.properties.horario + "</strong><br/>"
+            + "Juridiscción: <strong>" + feature.properties.jurisdicci);
+    }
+}
+
+/* function agregarPopupSalud(feature, layer) {
+    if (feature.properties && feature.properties.Nombre_1) {
+        layer.bindPopup("<strong>" + feature.properties.Nombre_1 + "</strong><br/>" + feature.properties.Direccion);
+    }
+} */
+
+//POPUP SALUD//
+
+
 function agregarPopupCircuitos(feature, layer) {
     if (feature.properties && feature.properties.Nombre) {
         layer.bindPopup("<strong>" + feature.properties.Nombre + "</strong><br/>" + feature.properties.Distancia + "</strong><br/>");
@@ -149,11 +167,7 @@ function agregarPopupPuntos(feature, layer) {
         layer.bindPopup("<strong>" + feature.properties.Locación + "</strong><br/>" + feature.properties.Dirección);
     }
 }
-function agregarPopupSalud(feature, layer) {
-    if (feature.properties && feature.properties.Nombre_1) {
-        layer.bindPopup("<strong>" + feature.properties.Nombre_1 + "</strong><br/>" + feature.properties.Direccion);
-    }
-}
+
 function agregarPopupHospital(feature, layer) {
     if (feature.properties && feature.properties.Nombre_1) {
         layer.bindPopup("<strong>" + feature.properties.Nombre_1 + "</strong><br/>" + feature.properties.Direccion + "</strong><br/>" + "Jurisdicción: <strong>" + feature.properties.Jurisdiccion);
