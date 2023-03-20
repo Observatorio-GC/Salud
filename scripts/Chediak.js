@@ -1,0 +1,15 @@
+var Chediak ={
+"type": "FeatureCollection",
+"name": "N°29",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "numero": "1108", "domicilio": "Sarratea 747", "email": null, "telefono": "0261-4271807", "Nombre_1": "Dr. Julio Lemos", "Nivel": "Primario", "Gestion": "Publico", "CenSalud": "Nº 29 Roberto Chediak", "id": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.852653467122153, -32.909212048312448 ] ] } },
+{ "type": "Feature", "properties": { "numero": "1485", "domicilio": "Vicente Lopez Planes y Derqui", "email": "amaure@mendoza.edu.ar", "telefono": "0261-4244119", "Nombre_1": "Avelino Maure", "Nivel": "Primario", "Gestion": "Concertado", "CenSalud": "Nº 29 Roberto Chediak", "id": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.854148130839064, -32.916748800659541 ] ] } },
+{ "type": "Feature", "properties": { "numero": "1109", "domicilio": "Almirante Brown 1355", "email": "jmrosas@mendoza.edu.ar", "telefono": "0261-4242205", "Nombre_1": "Juan Martinez de Rosas", "Nivel": "Primario", "Gestion": "Publico", "CenSalud": "Nº 29 Roberto Chediak", "id": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.847383408068467, -32.910481301976098 ] ] } },
+{ "type": "Feature", "properties": { "numero": "P132", "domicilio": "Pedro J. Godoy 1191", "email": null, "telefono": "0261-4284624", "Nombre_1": "San Jorge", "Nivel": "Primario - Secundario", "Gestion": "Privado", "CenSalud": "Nº 29 Roberto Chediak", "id": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.858501, -32.903204 ] ] } },
+{ "type": "Feature", "properties": { "numero": "1408", "domicilio": "Hungria 800", "email": null, "telefono": null, "Nombre_1": "Republica del Peru", "Nivel": "Primario", "Gestion": "Publico", "CenSalud": "Nº 29 Roberto Chediak", "id": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.85620981029804, -32.915773728337662 ] ] } },
+{ "type": "Feature", "properties": { "numero": "P-049", "domicilio": "Dequi 1240", "email": null, "telefono": "261 4281141", "Nombre_1": "Ntra. Sra. del Rosario de Pompeya", "Nivel": "Primario - Secundario", "Gestion": "Privado", "CenSalud": "Nº 29 Roberto Chediak", "id": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.858532880864942, -32.916525562709339 ] ] } },
+{ "type": "Feature", "properties": { "numero": "42", "domicilio": "Biritos 160", "email": null, "telefono": null, "Nombre_1": "Jardin Exclusivo", "Nivel": "Inicial", "Gestion": "Publico", "CenSalud": "Nº 29 Roberto Chediak", "id": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.846992338307302, -32.910125466561766 ] ] } },
+{ "type": "Feature", "properties": { "numero": "P-271", "domicilio": "Tucuman 329", "email": null, "telefono": null, "Nombre_1": "Maria Reina", "Nivel": "Inicial - Primario", "Gestion": "Privado", "CenSalud": "Nº 29 Roberto Chediak", "id": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.848381429941711, -32.907598253630532 ] ] } }
+]
+}

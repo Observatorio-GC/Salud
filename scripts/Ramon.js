@@ -1,0 +1,15 @@
+var Ramon ={
+"type": "FeatureCollection",
+"name": "N°149",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "numero": "1116", "domicilio": "Salta 1050", "email": null, "telefono": "0261-4221044", "Nombre_1": "Dr.Tomas Godoy Cruz", "Nivel": "Primario", "Gestion": "Publico", "CenSalud": "Nº 149 Ramon Carrillo", "id": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.856962324336976, -32.926626415908657 ] ] } },
+{ "type": "Feature", "properties": { "numero": "1550", "domicilio": "Lavalle 1055", "email": null, "telefono": "0261-4226823", "Nombre_1": "Fragata Sarmiento", "Nivel": "Primario", "Gestion": "Publico", "CenSalud": "Nº 149 Ramon Carrillo", "id": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.858814281213881, -32.925218580885719 ] ] } },
+{ "type": "Feature", "properties": { "numero": "1623", "domicilio": "Derqui y Hungria", "email": "mante@mendoza.edu.ar", "telefono": "0261-4282574", "Nombre_1": "Manuel Pacifico Antequeda", "Nivel": "Primario", "Gestion": "Publico", "CenSalud": "Nº 149 Ramon Carrillo", "id": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.856504938236938, -32.917060255253794 ] ] } },
+{ "type": "Feature", "properties": { "numero": "1456", "domicilio": "R. Gallegos y M. Sastre", "email": "aalvarez@mendoza.edu.ar", "telefono": "0261-4272663", "Nombre_1": "Agustin Alvarez", "Nivel": "Primario", "Gestion": "Concertado", "CenSalud": "Nº 149 Ramon Carrillo", "id": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.873235912028179, -32.910138060771949 ] ] } },
+{ "type": "Feature", "properties": { "numero": "1552", "domicilio": "Montes de Oca", "email": null, "telefono": "261 4273303", "Nombre_1": "Bandera Argentina", "Nivel": "Primario", "Gestion": "Publico", "CenSalud": "Nº 149 Ramon Carrillo", "id": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.866027067955855, -32.919557464762555 ] ] } },
+{ "type": "Feature", "properties": { "numero": "P-244", "domicilio": "Joaquin V Gonzalez 163", "email": null, "telefono": null, "Nombre_1": "Anton Martin Slomsek", "Nivel": "Primario", "Gestion": "Privado", "CenSalud": "Nº 149 Ramon Carrillo", "id": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.859026443221836, -32.925794042613283 ] ] } },
+{ "type": "Feature", "properties": { "numero": "1-485", "domicilio": "Vicente Lopez y Planes 770", "email": null, "telefono": null, "Nombre_1": "Rayen", "Nivel": "Inicial", "Gestion": "Publico", "CenSalud": "Nº 149 Ramon Carrillo", "id": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.854126136030672, -32.916595975167809 ] ] } },
+{ "type": "Feature", "properties": { "numero": "0-005", "domicilio": "Juncal 1367", "email": null, "telefono": null, "Nombre_1": "26 de Septiembre", "Nivel": "Inicial", "Gestion": "Publico", "CenSalud": "Nº 149 Ramon Carrillo", "id": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.871850408394337, -32.909185575759608 ] ] } }
+]
+}

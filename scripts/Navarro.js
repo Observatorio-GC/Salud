@@ -1,0 +1,14 @@
+var Navarro ={
+"type": "FeatureCollection",
+"name": "N°28",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "numero": "1220", "domicilio": "Peltier 191", "email": "misiones@mendoza.edu.ar", "telefono": "0261-4390553", "Nombre_1": "Misiones", "Nivel": "Primario", "Gestion": "Publico", "CenSalud": "Nº 28 Dr. Juan Maurin Navarro", "id": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.845959922438325, -32.947384916754572 ] ] } },
+{ "type": "Feature", "properties": { "numero": "1641", "domicilio": "Perito Moreno 2531", "email": null, "telefono": "0261-4396973", "Nombre_1": "Juan de Coria Bohorquez", "Nivel": "Primario", "Gestion": "Publico", "CenSalud": "Nº 28 Dr. Juan Maurin Navarro", "id": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.851692582049353, -32.953789598846846 ] ] } },
+{ "type": "Feature", "properties": { "numero": "PS037", "domicilio": "Pablo Loos 21/84", "email": "colegiointegraldelhuerto@yahoo.com.ar", "telefono": "0261-4393538", "Nombre_1": "Integral del Huerto", "Nivel": "Primario - Secundario", "Gestion": "Privado", "CenSalud": "Nº 28 Dr. Juan Maurin Navarro", "id": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.850367796865513, -32.952664711480971 ] ] } },
+{ "type": "Feature", "properties": { "numero": "1016", "domicilio": "Rawson y Hermitte", "email": "pburgoa@mendoza.edu.ar", "telefono": "0261-4390708", "Nombre_1": "Petrona de Burgoa", "Nivel": "Primario", "Gestion": "Publico", "CenSalud": "Nº 28 Dr. Juan Maurin Navarro", "id": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.843847936623504, -32.953591972880375 ] ] } },
+{ "type": "Feature", "properties": { "numero": "PS119", "domicilio": "Carril Cervantes 2116", "email": "etea@mendoza.edu.ar", "telefono": "0261-4393073", "Nombre_1": "Escuela Tecnica Ecologica Ambientalista", "Nivel": "Primario - Secundario", "Gestion": "Privado", "CenSalud": "Nº 28 Dr. Juan Maurin Navarro", "id": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.845149209003651, -32.950930056467747 ] ] } },
+{ "type": "Feature", "properties": { "numero": "1077", "domicilio": "Jujuy y Berutti", "email": null, "telefono": "0261-4393693", "Nombre_1": "Provincia Buenos Aires", "Nivel": "Primario", "Gestion": "Publico", "CenSalud": "Nº 28 Dr. Juan Maurin Navarro", "id": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.83509918719713, -32.94709798459661 ] ] } },
+{ "type": "Feature", "properties": { "numero": "PS119", "domicilio": "Carril Cervantes 2116", "email": null, "telefono": "0261-4393073", "Nombre_1": "Escuela Ecologica", "Nivel": "Primario - Secundario", "Gestion": "Privado", "CenSalud": "Nº 28 Dr. Juan Maurin Navarro", "id": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.845045625132599, -32.950794242256507 ] ] } }
+]
+}
