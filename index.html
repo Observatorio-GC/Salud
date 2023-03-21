@@ -388,11 +388,18 @@ i
 			Depa = L.geoJson(DistritosDepartamentales, {
 				onEachFeature: agregarPopupDistritosDepartamentales
 			}),
+			espverdes = L.geoJson(EspaciosVerdes, {
+				onEachFeature: agregarPopupespaciosverdes
+			}).setStyle({
+				color: "#4daf4a",
+				fillOpacity: 0.75
+			}),
 			polideportivos = L.geoJson(Polideportivos, {
 				pointToLayer: crearIconoPoli,
 				onEachFeature: agregarPopupSalud
 			});
 
+	
 
 
 		/* CREACIÓN DEL MAPA CON BASE LAYERS Y OVERLAYS */
@@ -426,6 +433,7 @@ i
 			"Capas de Utilidad": {
 				"Distritos": Depa,
 				"Barrios Consolidados": BarriosConsolidados,
+				"Espacios Verdes": espverdes,
 				"Polideportivos": polideportivos,
 			},
 
