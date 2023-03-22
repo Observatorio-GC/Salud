@@ -137,6 +137,11 @@
 	<script type="text/javascript" src="scripts/Polideportivos.js"></script>
 	
 	<script type="text/javascript" src="scripts/Glaciares.js"></script>
+	     <script type="text/javascript" src="scripts/Huarp.js"></script> 
+		 <script type="text/javascript" src="scripts/Rebollo.js"></script> 
+		 <script type="text/javascript" src="scripts/PostaSolySierra.js"></script>
+		 <script type="text/javascript" src="scripts/Fuchs.js"></script>
+		 <script type="text/javascript" src="scripts/GabrielFoecyt.js"></script>
 	<script type="text/javascript" src="scripts/Foecyt.js"></script>
 	<script type="text/javascript" src="scripts/Sin.js"></script>
 	<script type="text/javascript" src="scripts/Arturo.js"></script>
@@ -324,6 +329,31 @@
 				pointToLayer: crearIconoRojo,
 				onEachFeature: agregarPopupescuelas
 			}),
+			
+			huarp = L.geoJson(Huarp, {
+				pointToLayer: crearIconoRojo,
+				onEachFeature: agregarPopupescuelas
+			}),
+			
+			rebollo = L.geoJson(Rebollo, {
+				pointToLayer: crearIconoVerde,
+				onEachFeature: agregarPopupescuelas
+			}),
+			
+			gabrielFoecyt = L.geoJson(GabrielFoecyt, {
+				pointToLayer: crearIconoVerde,
+				onEachFeature: agregarPopupescuelas
+			}),
+			
+			fuchs = L.geoJson(Fuchs, {
+				pointToLayer: crearIconoVerde,
+				onEachFeature: agregarPopupescuelas
+			}),
+			
+			postaSolySierra = L.geoJson(PostaSolySierra, {
+				pointToLayer: crearIconoVerde,
+				onEachFeature: agregarPopupescuelas
+			}),
 
 			ramon = L.geoJson(Ramon, {
 				pointToLayer: crearIconoAzul,
@@ -388,18 +418,11 @@ i
 			Depa = L.geoJson(DistritosDepartamentales, {
 				onEachFeature: agregarPopupDistritosDepartamentales
 			}),
-			espverdes = L.geoJson(EspaciosVerdes, {
-				onEachFeature: agregarPopupespaciosverdes
-			}).setStyle({
-				color: "#4daf4a",
-				fillOpacity: 0.75
-			}),
 			polideportivos = L.geoJson(Polideportivos, {
 				pointToLayer: crearIconoPoli,
 				onEachFeature: agregarPopupSalud
 			});
 
-	
 
 
 		/* CREACIÓN DEL MAPA CON BASE LAYERS Y OVERLAYS */
@@ -433,13 +456,12 @@ i
 			"Capas de Utilidad": {
 				"Distritos": Depa,
 				"Barrios Consolidados": BarriosConsolidados,
-				"Espacios Verdes": espverdes,
 				"Polideportivos": polideportivos,
 			},
 
 			"Centros de Salud":{
-				"Nº 4 Los Glaciares": centroGlaciares,
-				"Nº 8 B. Los Huerpes II": centroHuarpes,
+				"Nº 4 Los r": centroGlaciares,
+				"Nº 8 B. Los Huarpes II": centroHuarpes,
 				"Nº 27 San Fco. del Monte": centroFran,
 				"Nº 28 Dr. Juan Navarro": centroNavarro,
 				"Nº 29 Roberto Chediak": centroChediak,
@@ -457,14 +479,19 @@ i
 
 			"Campaña de Vacunación - Escuelas": {
 				"Nº 4 Los Glaciares": glaciares,
+				"Nº8 Barrio Huarpes": huarp,
 				"Nº 27 San Fco. del Monte": fran,
 				"Nº 28 Dr. Juan Maurin Navarro": navarro,
 				"Nº 29 Roberto Chediak": chediak,
 				"Nº 30 Dr. Aldo Dapás": aldo,
 				"Nº 134 Padre Contreras": padre,
 				"Nº 149 Ramon Carrillo": ramon,
+				"Nº 150 Daniel Rebollo": rebollo,
 				"Nº 168 La Estanzuela": estanzuela,
 				"Nº 204 B. Sarmiento": sarmiento,
+				"Nº 304 Barrio Fuchs": fuchs,
+				"Nº 305 Barrio Foecyt": foecyt,
+				"Nº 515 Posta Sanitaria Sol y Sierra": postaSolySierra,
 				"Nº 908 Pte. Arturo Illia": arturo,
 			
 			},
